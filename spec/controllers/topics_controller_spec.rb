@@ -74,7 +74,7 @@ describe TopicsController do
 
       it "redirects to the created topic" do
         post :create, :topic => valid_attributes
-        response.should redirect_to(Topic.last)
+        response.should redirect_to(topics_path)
       end
     end
 

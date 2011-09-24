@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'rake'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
