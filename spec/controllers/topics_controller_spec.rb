@@ -24,7 +24,7 @@ describe TopicsController do
   # Topic. As you add validations to Topic, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:title => 'Title for Topic'}
   end
 
   describe "GET index" do
