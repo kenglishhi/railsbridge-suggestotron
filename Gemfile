@@ -14,6 +14,8 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'web-app-theme', '~> 0.8.0'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
@@ -27,7 +29,7 @@ group :test, :development do
   gem 'launchy'
   gem 'shoulda'
   #json is only for judy's computer
-  gem 'json' 
+  gem 'json'
 end
 
 group :production do
