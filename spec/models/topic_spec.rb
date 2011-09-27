@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Topic do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validation" do
+    it { should validate_presence_of(:title)}
+  end
 end

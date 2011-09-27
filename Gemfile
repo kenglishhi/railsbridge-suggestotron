@@ -25,6 +25,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'launchy'
+  gem 'shoulda'
   #json is only for judy's computer
   gem 'json' 
 end
