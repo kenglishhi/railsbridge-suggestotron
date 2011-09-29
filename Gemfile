@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'rake'
 gem 'thin'
 gem 'devise'
+gem 'omniauth'
 
 # Gems used only for assets and not required
 # in production environments by default.
