@@ -33,7 +33,4 @@ group :test, :development do
 end
 
 group :production do
-  # fix for putting rails 3.1 on heroku
-  gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem 'pg'
 end
