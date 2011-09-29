@@ -1,3 +1,20 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.topic{
+   width: 200px;
+   p {
+        color: green;
+   }
+   .right-corner {
+     float:right;
+   }
+   .manage-options {
+
+   }
+}
+
+#new-topic {
+    margin-top:20px;
+  font-size: 14px;
+}
