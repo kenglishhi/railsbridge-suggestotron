@@ -1,7 +1,7 @@
 %h1 Listing of Topics
 - @topics.each do |topic|
   .topic
-    %span.right-corner= link_to "+1", topic_votes_path(topic), :method => 'POST'
+    %span.right-corner= link_to "+1", topic_votes_path(topic,:format => 'json'), :class => 'vote-for'
     %h4= topic.title
     %p
       = topic.votes.count
@@ -12,3 +12,7 @@
 
 #new-topic
   =link_to 'New Topic', new_topic_path
+%br
+%br
+
+%a#do-coffee{href: '#'} Do Coffee
