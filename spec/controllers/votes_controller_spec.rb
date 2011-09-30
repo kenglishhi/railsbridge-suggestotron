@@ -14,6 +14,16 @@ describe VotesController do
       post :create, :topic_id => @topic.id
       response.should redirect_to(topics_path)
     end
+    describe "With valid params and format json" do
+      before do
+        @topic.votes << Vote.new
+      end
+      it "should return number_of_votes" do
+        post :create, :format => 'json', :topic_id => @topic.id
+        json_response = JSON.parse(response.body)
+        json_response['number_of_votes'].should == 2
+      end
+    end
   end
 
 end

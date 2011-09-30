@@ -3,7 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(->
   $('a.vote-for').click(->
-    $.post(this.href)
+    link = $(this)
+    data = $.post(this.href, (data)->
+      link.closest('.topic').find('.number-of-votes:first').html(data.number_of_votes)
+    )
     false
   )
 )

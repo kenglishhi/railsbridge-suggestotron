@@ -5,9 +5,7 @@ class VotesController < ApplicationController
     @topic.save
     respond_to do |format|
       format.html { redirect_to topics_path }
-      format.json { render json: @topic }
+      format.json { render :json => @topic.to_json(:methods => :number_of_votes) }
     end
-
-
   end
 end
