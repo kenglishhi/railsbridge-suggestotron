@@ -3,6 +3,8 @@ require 'spec_helper'
 describe VotesController do
   context "POST create" do
     before do
+      @user = users(:first_user)
+      sign_in @user
       @topic = Topic.create(:title => 'My First Topic')
     end
     it "should create a vote" do
@@ -16,7 +18,7 @@ describe VotesController do
     end
     describe "With valid params and format json" do
       before do
-        @topic.votes << Vote.new
+        @topic = topics(:first_topic)
       end
       it "should return number_of_votes" do
         post :create, :format => 'json', :topic_id => @topic.id

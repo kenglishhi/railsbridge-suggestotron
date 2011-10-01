@@ -31,7 +31,7 @@ describe TopicsController do
     it "assigns all topics as @topics" do
       topic = Topic.create! valid_attributes
       get :index
-      assigns(:topics).should eq([topic])
+      assigns(:topics).should =~ ([topic,topics(:first_topic)])
     end
   end
 

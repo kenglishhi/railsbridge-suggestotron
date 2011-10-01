@@ -15,12 +15,14 @@ describe Topic do
       @topic.number_of_votes.should == 0
     end
     it "should have 1 vote" do
-      @topic.votes << Vote.new
+      @topic.votes << Vote.new(:user => users(:first_user))
       @topic.number_of_votes.should == 1
     end
     it "should have 2 vote" do
-      @topic.votes << Vote.new
-      @topic.votes << Vote.new
+      user = User.create(:email => 'user@yahoo.com', :password => 'hello123', :password_confirmation => 'hello123')
+      user.should be_valid
+      @topic.votes << Vote.new(:user => users(:first_user))
+      @topic.votes << Vote.new(:user => user)
       @topic.number_of_votes.should == 2
     end
   end

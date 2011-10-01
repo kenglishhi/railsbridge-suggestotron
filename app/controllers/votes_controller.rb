@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
-    @topic.votes << Vote.create
+    @topic.votes << Vote.create(:user => current_user)
     @topic.save
     respond_to do |format|
       format.html { redirect_to topics_path }
