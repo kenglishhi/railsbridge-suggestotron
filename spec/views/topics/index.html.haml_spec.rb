@@ -32,6 +32,15 @@ describe "topics/index.html.haml" do
       rendered.should_not have_selector("a",
                                         :text => "+1")
     end
+    it "should not show a Edit/Delete link" do
+      render
+      rendered.should_not have_selector("div.topic .manage-options")
+    end
+    it "should not new topic a Edit/Delete link" do
+      render
+      rendered.should_not have_selector("div#new-topic")
+    end
+
   end
   context "when logged in" do
     before do
@@ -59,6 +68,11 @@ describe "topics/index.html.haml" do
         rendered.should_not have_selector("a",
                                           :text => "+1")
       end
+      it "should  show a Edit/Delete link" do
+        render
+        rendered.should have_selector("div.topic .manage-options")
+      end
+
     end
   end
 

@@ -8,12 +8,12 @@
     %p
       %span.number-of-votes= topic.votes.count
       votes
-    .manage-options
-      = link_to 'Edit', edit_topic_path(topic)
-      = link_to 'Delete', topic, confirm: 'Are you sure?', method: :delete
+    - if current_user
+      = render 'manage_options', :topic => topic
 
-#new-topic
-  =link_to 'New Topic', new_topic_path
+- if current_user
+  #new-topic
+    =link_to 'New Topic', new_topic_path
 %br
 %br
 
