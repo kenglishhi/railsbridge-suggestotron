@@ -1,5 +1,4 @@
 first_user:
-  id: 1
   email: kenglish@gmail.com
   encrypted_password: $2a$10$rtiMrby5L1ItDL4N3wTyuuZ2sIU4wPp/eqXMhbp8b2loB5e.pZLo2
   sign_in_count: 5

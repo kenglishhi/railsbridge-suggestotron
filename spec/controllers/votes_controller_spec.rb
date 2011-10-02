@@ -18,12 +18,12 @@ describe VotesController do
     end
     describe "With valid params and format json" do
       before do
-        @topic = topics(:first_topic)
+        @topic = Topic.create(:title => 'A brand new topic')
       end
       it "should return number_of_votes" do
         post :create, :format => 'json', :topic_id => @topic.id
         json_response = JSON.parse(response.body)
-        json_response['number_of_votes'].should == 2
+        json_response['number_of_votes'].should == 1
       end
     end
   end
