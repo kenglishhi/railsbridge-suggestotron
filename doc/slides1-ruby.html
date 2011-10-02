@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<!--
+Google HTML5 slide template
+
+Authors: Luke Mahé (code)
+Marcin Wichary (code and design)
+
+Dominic Mazzoni (browser compatibility)
+Charles Chen (ChromeVox support)
+
+URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Ruby on Rails Pacfic New Media</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+    what you want. */
+
+
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+
+    <!-- Your slides (<article>s) go here. Delete or comment out the
+    slides below. -->
+
+
+
+    <article>
+    <h1>
+      Ruby on Rails  - Pacific New Media
+      <br>
+      Part 1: Intro to Ruby 
+    </h1>
+    <p>
+    Kevin English
+    <br>
+    May 10, 2011
+    </p>
+    </article>
+    <article>
+    <h1>
+      What does it all mean?
+    </h1>
+    </article>
+    <article>
+    <h1>
+      Ruby
+    </h1>
+    <p>
+    is a programming language, similar to Python and Perl. 
+  <ul>
+    <li>dynamically typed (no need for “int i”), </li>
+    <li>interpreted </li>
+    <li> It has dozens of  shortcuts </li>
+    <li>RegEx support and works well for shell scripting.</li>
+  </ul>
+    </p>
+    </article>
+ 
+    <article>
+    <h1>
+      Rails
+    </h1>
+    <p>
+    is a Ruby Gem, or a programming library. 
+    <li> helps make Model View Controller (MVC) web applications </li>
+    <li> classes for saving to the database,  </li>
+    <li>handling URLs and displaying html  </li>
+    </p>
+    </article>
+ 
+    <article>
+    <h1>
+      IRB
+    </h1>
+    <p>
+    interactive Ruby console for live debugging(type “irb” to use). Rails has a special console 
+    <pre> 
+     rails console
+     rails c # shortcut
+    
+    </p>
+    </article>
+ 
+    <article>
+    <h1>
+      Tips for people new to Ruby
+    </h1>
+
+    </article>
+    <article>
+    <h3>
+      1) Ruby lets you be concise 
+    </h3>
+    <p>
+<pre><span class="number">10</span><span class="punct">.</span><span class="ident">times</span> <span class="keyword">do</span>  
+  <span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">Hello World</span><span class="punct">&quot;</span> 
+<span class="keyword">end</span> 
+</pre>
+
+    </article>
+
+    <article>
+    <h3>2) Everything is an Object </h3>
+
+    <p>
+    Everything in Ruby that can be bound to a variable name is a full-fledged object.
+    </p>
+    <p>
+    This has interesting consequences
+    </p>
+
+    </article>
+    <article>
+
+    <h3>
+      Classes are Objects!
+    </h3>
+    <p>
+    Array is a constant name that is bound to the Array class object.
+    </p>
+    <p>
+    Creating new objects does not require special syntax. We just send new to the class object.
+    </p>
+<pre><span class="ident">a</span> <span class="punct">=</span> <span class="constant">Array</span><span class="punct">.</span><span class="ident">new</span>
+</pre>
+
+    </article>
+
+    <article>
+    <h3>No primitives (like in Java)</h3>
+    <p> Even integers are full fledged objects.</p>
+
+<pre>  <span class="number">0</span><span class="punct">.</span><span class="ident">zero?</span>    <span class="comment"># =&gt; true</span>
+  <span class="number">1</span><span class="punct">.</span><span class="ident">zero?</span>    <span class="comment"># =&gt; false</span>
+  <span class="number">1</span><span class="punct">.</span><span class="ident">abs</span>      <span class="comment"># =&gt; 1</span>
+  <span class="punct">-</span><span class="number">1</span><span class="punct">.</span><span class="ident">abs</span>     <span class="comment"># =&gt; 1</span>
+  <span class="number">1</span><span class="punct">.</span><span class="ident">methods</span>  <span class="comment"># =&gt; list of methods for object 1</span>
+  <span class="number">2</span><span class="punct">.+(</span><span class="number">3</span><span class="punct">)</span>     <span class="comment"># =&gt; 5  (same as 2+3)</span>
+  <span class="number">10</span><span class="punct">.</span><span class="keyword">class   </span><span class="class">#</span> <span class="punct">=&gt;</span> <span class="ident">Fixnum</span>
+  <span class="punct">(</span><span class="number">10</span><span class="punct">**</span><span class="number">100</span><span class="punct">).</span><span class="keyword">class </span><span class="class">#</span> <span class="punct">=&gt;</span> <span class="ident">Bignum</span>
+</pre>
+    </article>
+    <article>
+
+    <h3>3) Ruby is waaaaay dynamic</h3>
+    <p> 
+    Methods can be added to classes at any point ... even built in classes.  </p>
+
+<pre><span class="keyword">class </span><span class="class">Integer</span>
+  <span class="keyword">def </span><span class="method">even?</span>
+    <span class="punct">(</span><span class="constant">self</span> <span class="punct">%</span> <span class="number">2</span><span class="punct">)</span> <span class="punct">==</span> <span class="number">0</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="ident">p</span> <span class="punct">(</span><span class="number">1</span><span class="punct">..</span><span class="number">10</span><span class="punct">).</span><span class="ident">select</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">n</span><span class="punct">|</span> <span class="ident">n</span><span class="punct">.</span><span class="ident">even?</span> <span class="punct">}</span>
+  <span class="comment"># =&gt; [2, 4, 6, 8, 10]</span>
+
+</pre>
+
+
+    </article>
+    <article>
+    <h3>
+      Use Ruby Convention
+    </h3>
+    <p>
+    <code>ClassNames</code>
+    </p>
+    <p>
+    <code>method_names </code>and <code>variable_names</code>
+    </p>
+    <p>
+    <code> methods_asking_a_question?  </code>
+    </p>
+    <p>
+    <code> @instance_variables </code>
+    </p>
+    <p>
+    <code> $global_variables </code>
+    </p>
+    <p>
+    <code> SOME_CONSTANTS or OtherConstants </code>
+    </p>
+    </article>
+
+    <article>
+    <h3>
+      4) Code blocks are EVERYWHERE, learn to love them
+    </h3>
+    <p>
+     Bad code (maybe what you are used to) :
+<pre><span class="keyword">for</span> <span class="ident">i</span> <span class="keyword">in</span> <span class="punct">(</span><span class="number">1</span><span class="punct">..</span><span class="number">10</span><span class="punct">)</span>
+  <span class="ident">puts</span> <span class="ident">i</span>
+<span class="keyword">end</span>
+</pre>
+     Ruby Way:
+<pre>
+<span class="punct">(</span><span class="number">1</span><span class="punct">..</span><span class="number">10</span><span class="punct">).</span><span class="ident">each</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">i</span> <span class="punct">|</span>
+  <span class="ident">puts</span> <span class="ident">i</span>
+<span class="keyword">end</span>
+
+</pre>
+     Or all on one line!
+<pre>
+<span class="punct">(</span><span class="number">1</span><span class="punct">..</span><span class="number">10</span><span class="punct">).</span><span class="ident">each</span> <span class="punct">{</span> <span class="punct">|</span><span class="ident">i</span><span class="punct">|</span> <span class="ident">puts</span> <span class="ident">i</span> <span class="punct">}</span>
+
+     </pre>
+    </p>
+
+    </article>
+    <article>
+
+    <h3>
+       Rails has a lot of code blocks
+    </h3>
+    <p> 
+       Tell me what this does?
+<pre>
+<span class="keyword">class </span><span class="class">Person</span> <span class="punct">&lt;</span> <span class="constant">ActiveRecord</span><span class="punct">::</span><span class="constant">Base</span>
+  <span class="ident">validates_each</span> <span class="symbol">:first_name</span><span class="punct">,</span> <span class="symbol">:last_name</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">record</span><span class="punct">,</span> <span class="ident">attr</span><span class="punct">,</span> <span class="ident">value</span><span class="punct">|</span>
+    <span class="ident">record</span><span class="punct">.</span><span class="ident">errors</span><span class="punct">.</span><span class="ident">add</span> <span class="ident">attr</span><span class="punct">,</span> <span class="punct">'</span><span class="string">starts with z.</span><span class="punct">'</span> <span class="keyword">if</span> <span class="ident">value</span><span class="punct">[</span><span class="number">0</span><span class="punct">]</span> <span class="punct">==</span> <span class="char">?z</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+    </article>
+    <article>
+    <h3>
+       Rails has a lot of code blocks
+    </h3>
+    <p> 
+       Tell me what this does?
+
+<pre>
+<span class="ident">respond_to</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">format</span><span class="punct">|</span>
+  <span class="ident">format</span><span class="punct">.</span><span class="ident">html</span> <span class="comment"># index.html.erb</span>
+  <span class="ident">format</span><span class="punct">.</span><span class="ident">xml</span>  <span class="punct">{</span> <span class="ident">render</span> <span class="symbol">:xml</span> <span class="punct">=&gt;</span> <span class="attribute">@items</span> <span class="punct">}</span>
+  <span class="ident">format</span><span class="punct">.</span><span class="ident">xls</span> <span class="keyword">do</span>
+    <span class="ident">excel</span> <span class="punct">=</span> <span class="constant">Item</span><span class="punct">.</span><span class="ident">get_excel</span>
+
+    <span class="ident">send_file</span><span class="punct">(</span><span class="ident">excel</span><span class="punct">.</span><span class="ident">get_spreadsheet_tempfile_name</span><span class="punct">,</span>
+              <span class="symbol">:type</span> <span class="punct">=&gt;</span> <span class="punct">'</span><span class="string">application/vnd.ms-excel</span><span class="punct">',</span>
+              <span class="symbol">:disposition</span> <span class="punct">=&gt;</span> <span class="punct">'</span><span class="string">attachment</span><span class="punct">',</span>
+              <span class="symbol">:filename</span> <span class="punct">=&gt;</span> <span class="ident">excel</span><span class="punct">.</span><span class="ident">get_destination_filename</span><span class="punct">)</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+ 
+       /projects/index <br /> 
+       /projects/index.xml <br /> 
+       /projects/index.xls <br /> 
+
+    </article>
+    <article>
+    references:
+
+    http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+    </article>
+
+
+</section>
+
+</body>
+</html>
